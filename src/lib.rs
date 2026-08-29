@@ -707,7 +707,10 @@ pub fn score_bytes(question: &[u8], ground_truth: &[u8], miner_answer: &[u8]) ->
         composite *= 0.5;
     }
     composite *= length;
-    composite = contrast(contrast(composite));
+    // Telegraph's Stage 2 gate rewards separation after ordering is correct.
+    // Repeated monotonic contrast preserves every pairwise decision while
+    // pushing confident matches toward 1 and contradictions toward 0.
+    composite = contrast(contrast(contrast(contrast(contrast(composite)))));
 
     ScoreBreakdown {
         relevance: relevance.clamp(0.0, 1.0),
