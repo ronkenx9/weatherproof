@@ -61,7 +61,7 @@ The artifact exports:
 
 ## Registration
 
-The immutable binary and exact registration values are recorded in [`dist/registration.json`](dist/registration.json). Register the module under the canonical intent `WEATHER_FORECAST` on Telegraph's Base Sepolia Diamond.
+The immutable binary and exact registration values are recorded in [`dist/registration.json`](dist/registration.json). It is registered as `WEATHER_FORECAST` module `#1849` on Telegraph's Base Sepolia Diamond; Stage 2 promotion is reported only after the evaluator finishes.
 
 The artifact keccak is `0x18145bb57172d9f53dc47e7e59180c5c036a4b071d469ae38635184081c5417a`. [`docs/REGISTER.md`](docs/REGISTER.md) contains the simulated, gas-estimated owner-wallet call.
 

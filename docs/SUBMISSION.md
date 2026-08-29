@@ -43,9 +43,10 @@ Run `./scripts/build.sh && node scripts/demo.mjs`. The terminal shows the correc
 
 - Repository: https://github.com/ronkenx9/weatherproof
 - Immutable WASM: https://raw.githubusercontent.com/ronkenx9/weatherproof/7b2ab0ca5dde57fc7aaf6e3749e87eac65c7dad3/dist/weatherproof.wasm
-- Registration transaction: `OWNER_REGISTRATION_TX`
+- Registration ID: `1849`
+- Registration transaction: https://sepolia.basescan.org/tx/0x5d38cb61f1e895decc2f8aa3d808adfa8ad02ee3f292eefa578a96413f002344
 - X post: `OWNER_X_POST`
 
 ## Owner-only final actions
 
-The owner must connect the intended Base Sepolia wallet, sign the registration transaction, publish the X post, and click the final submission action.
+Registration is complete. The owner must publish the X post and click the final hackathon submission action.

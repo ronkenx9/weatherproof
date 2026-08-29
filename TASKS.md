@@ -42,7 +42,7 @@ The first unchecked task is the only active task. Every checked task must have i
 
 - [x] P4.1 Publish repository and immutable artifact URL.
   - Gate: URL returns exact bytes matching manifest keccak256.
-- [ ] P4.2 Register from owner-controlled Base Sepolia wallet.
+- [x] P4.2 Register from owner-controlled Base Sepolia wallet.
   - Gate: `WasmRegistered` event and registration ID captured.
 - [ ] P4.3 Verify Telegraph evaluation.
   - Gate: status, candidate/champion margins, wins, and historical agreement captured. Fix and re-register if rejected while time remains.
