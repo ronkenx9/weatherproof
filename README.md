@@ -14,10 +14,10 @@ The committed 15-case adversarial corpus compares the release binary against Tel
 |---|---:|---:|
 | Correct beats corrupted | 15/15 | 12/15 |
 | Correct beats gaming attack | 15/15 | 4/15 |
-| Average correct–corrupt margin | **0.9923** | 0.6588 |
-| Average correct–attack margin | **0.9827** | -0.0661 |
+| Average correct–corrupt margin | **0.999999996** | 0.6588 |
+| Average correct–attack margin | **0.999989127** | -0.0661 |
 | Imports | **0** | 0 |
-| Release size | **16,957 bytes** | — |
+| Release size | **17,125 bytes** | — |
 
 These are reproducible local results, not claims about Telegraph's hidden evaluation. Promotion can only be established after live registration.
 
@@ -61,9 +61,9 @@ The artifact exports:
 
 ## Registration
 
-The immutable binary and exact registration values are recorded in [`dist/registration.json`](dist/registration.json). It is registered as `WEATHER_FORECAST` module `#1849` on Telegraph's Base Sepolia Diamond; Stage 2 promotion is reported only after the evaluator finishes.
+Registration `#1849` proved 15/15 hidden-fixture ordering but was rejected on separation (`0.7687` versus `0.9906`). The new v0.2 binary preserves that ordering and applies stricter monotonic calibration; its exact next-registration values are in [`dist/registration-v2.json`](dist/registration-v2.json). Promotion is reported only after a new live evaluation.
 
-The artifact keccak is `0x18145bb57172d9f53dc47e7e59180c5c036a4b071d469ae38635184081c5417a`. [`docs/REGISTER.md`](docs/REGISTER.md) contains the simulated, gas-estimated owner-wallet call.
+The v0.2 artifact keccak is `0xb749d778a4e53906381c805a41388b0d2342306195816b2a7bb81400d50da2e7`. [`docs/REGISTER.md`](docs/REGISTER.md) contains the registration handoff and the evidence from rejected v0.1.
 
 ## Evidence and limits
 

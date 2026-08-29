@@ -20,7 +20,7 @@ Weather answers can look semantically identical while disagreeing on the one fac
 
 WEATHERPROOF parses the supplied ground truth and miner answer into typed evidence. It normalizes temperature, wind, precipitation, probability, high/low/peak/threshold roles, temporal scope, and weather-condition polarity. Its composite rewards coverage and equivalence while sharply penalizing contradictions, missing evidence, and stuffing.
 
-It compiles to a 16,957-byte freestanding WASM module with zero imports and the complete Telegraph ABI.
+It compiles to a 17,125-byte freestanding WASM module with zero imports and the complete Telegraph ABI.
 
 ## Reproducible evidence
 
@@ -28,8 +28,8 @@ Against the immutable live incumbent `#636` on the committed 15-case corpus:
 
 - WEATHERPROOF: 15/15 correct-over-corrupt wins; incumbent: 12/15.
 - WEATHERPROOF: 15/15 correct-over-attack wins; incumbent: 4/15.
-- Average ordinary separation: `0.9923` versus `0.6588`.
-- Average attack separation: `0.9827` versus `-0.0661`.
+- Average ordinary separation: `0.999999996` versus `0.6588` on the committed local corpus.
+- Average attack separation: `0.999989127` versus `-0.0661`.
 - Zero candidate regressions across the 15 paired cases.
 - 500 deterministic fuzz trials, Unicode input, blank input, and 128 KiB input pass without traps.
 
@@ -42,11 +42,11 @@ Run `./scripts/build.sh && node scripts/demo.mjs`. The terminal shows the correc
 ## Links
 
 - Repository: https://github.com/ronkenx9/weatherproof
-- Immutable WASM: https://raw.githubusercontent.com/ronkenx9/weatherproof/7b2ab0ca5dde57fc7aaf6e3749e87eac65c7dad3/dist/weatherproof.wasm
-- Registration ID: `1849`
-- Registration transaction: https://sepolia.basescan.org/tx/0x5d38cb61f1e895decc2f8aa3d808adfa8ad02ee3f292eefa578a96413f002344
+- Immutable WASM: https://raw.githubusercontent.com/ronkenx9/weatherproof/a61f43ab2084a5d173c463127637a5891ce63eb7/dist/weatherproof.wasm
+- Registration ID: `NEW_V2_REGISTRATION_ID`
+- v0.1 evaluation evidence: registration `1849`, rejected despite 15/15 ordering because its `0.7687` margin was below `0.9906`.
 - X post: `OWNER_X_POST`
 
 ## Owner-only final actions
 
-Registration is complete. The owner must publish the X post and click the final hackathon submission action.
+The owner must register the v0.2 hash, replace the registration placeholder above, publish the X post, and click the final hackathon submission action.

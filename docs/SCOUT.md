@@ -36,6 +36,8 @@ Primary sources:
 
 The incumbent is a generic MiniLM/salience scorer deployed across many intents. Its semantic strength is also the exploit: high-overlap answers can preserve almost the same score after changing a critical value, unit, time window, or condition.
 
+Live registration `#1849` later showed that the incumbent reached a `0.9905663` margin on the current 15 hidden fixtures. WEATHERPROOF v0.1 also won 15/15 pairs but scored a `0.76872617` margin, so v0.2 adds monotonic confidence calibration without changing the underlying ordering.
+
 ## Alternatives rejected
 
 - `ONCHAIN_TX_LOOKUP`: strong product relevance, but incumbent margin was already about `0.792`.
