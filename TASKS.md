@@ -31,7 +31,7 @@ The first unchecked task is the only active task. Every checked task must have i
 
 ## P3 — Package
 
-- [ ] P3.1 Generate registration manifest.
+- [x] P3.1 Generate registration manifest.
   - Gate: intent, keccak256, byte size, source commit, incumbent evidence, and public artifact URL are present.
 - [x] P3.2 Fresh-clone verification and CI.
   - Gate: README commands pass from a clean checkout.
@@ -40,7 +40,7 @@ The first unchecked task is the only active task. Every checked task must have i
 
 ## P4 — Live registration
 
-- [ ] P4.1 Publish repository and immutable artifact URL.
+- [x] P4.1 Publish repository and immutable artifact URL.
   - Gate: URL returns exact bytes matching manifest keccak256.
 - [ ] P4.2 Register from owner-controlled Base Sepolia wallet.
   - Gate: `WasmRegistered` event and registration ID captured.

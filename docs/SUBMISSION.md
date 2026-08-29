@@ -41,8 +41,8 @@ Run `./scripts/build.sh && node scripts/demo.mjs`. The terminal shows the correc
 
 ## Links
 
-- Repository: `REPOSITORY_URL`
-- Immutable WASM: `ARTIFACT_URL`
+- Repository: https://github.com/ronkenx9/weatherproof
+- Immutable WASM: https://raw.githubusercontent.com/ronkenx9/weatherproof/7b2ab0ca5dde57fc7aaf6e3749e87eac65c7dad3/dist/weatherproof.wasm
 - Registration transaction: `OWNER_REGISTRATION_TX`
 - X post: `OWNER_X_POST`
 
