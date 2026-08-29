@@ -1,0 +1,132 @@
+{
+  "intent": "WEATHER_FORECAST",
+  "captured_at": "2026-08-29T00:00:00Z",
+  "incumbent": {
+    "registration_id": 636,
+    "margin": 0.53020585,
+    "url": "https://raw.githubusercontent.com/zkasuran/telegraph-salience-scorer/f009d2d778bd49611dcc0a7e3819a8dca74d1aad/dist/xfmr/wf_mini.wasm"
+  },
+  "cases": [
+    {
+      "id": "temperature-flip",
+      "question": "What will the temperature and conditions be in Lagos tomorrow?",
+      "ground_truth": "Lagos tomorrow will be partly cloudy with a high of 31 Celsius and a low of 25 Celsius.",
+      "good": "Tomorrow in Lagos: partly cloudy, high 31°C and low 25°C.",
+      "bad": "Tomorrow in Lagos: partly cloudy, high 41°C and low 35°C.",
+      "attack": "Lagos tomorrow weather forecast partly cloudy high low Celsius temperature conditions. High 41°C, low 35°C."
+    },
+    {
+      "id": "fahrenheit-equivalence",
+      "question": "How warm will New York be tomorrow afternoon?",
+      "ground_truth": "New York tomorrow afternoon will be sunny near 20 Celsius.",
+      "good": "Sunny tomorrow afternoon in New York, around 68 Fahrenheit.",
+      "bad": "Sunny tomorrow afternoon in New York, around 95 Fahrenheit.",
+      "attack": "New York sunny tomorrow afternoon temperature Celsius Fahrenheit around 95°F."
+    },
+    {
+      "id": "wind-unit-equivalence",
+      "question": "How strong will the wind be in Cape Town tonight?",
+      "ground_truth": "Cape Town tonight will be windy with gusts reaching 36 km/h.",
+      "good": "Windy tonight in Cape Town; gusts reach about 10 m/s.",
+      "bad": "Windy tonight in Cape Town; gusts reach about 30 m/s.",
+      "attack": "Cape Town tonight windy gusts wind speed km/h m/s 30 m/s."
+    },
+    {
+      "id": "rain-polarity",
+      "question": "Will it rain in Accra tomorrow morning?",
+      "ground_truth": "Accra will remain clear and dry tomorrow morning with no rain.",
+      "good": "Sunny in Accra tomorrow morning, with no precipitation expected.",
+      "bad": "Heavy rain and thunderstorms are expected in Accra tomorrow morning.",
+      "attack": "Accra tomorrow morning clear dry no rain weather forecast; however heavy thunderstorms and rain are expected."
+    },
+    {
+      "id": "storm-polarity",
+      "question": "Is a storm expected in Miami tonight?",
+      "ground_truth": "Thunderstorms with heavy rain are expected in Miami tonight.",
+      "good": "Miami should see stormy weather and heavy showers tonight.",
+      "bad": "Miami will stay clear and dry tonight.",
+      "attack": "Miami tonight thunderstorms heavy rain expected storm weather, but conditions will actually stay clear and dry."
+    },
+    {
+      "id": "forecast-window",
+      "question": "What is London's forecast tomorrow morning?",
+      "ground_truth": "London tomorrow morning will be cloudy at 12 Celsius with a 60 percent chance of rain.",
+      "good": "Cloudy in London tomorrow morning, 12°C, with rain probability around 60%.",
+      "bad": "Cloudy in London today evening, 12°C, with rain probability around 60%.",
+      "attack": "London tomorrow morning weather cloudy 12 Celsius 60 percent rain; data is for today evening."
+    },
+    {
+      "id": "precipitation-probability",
+      "question": "What is the rain chance in Seattle on Friday?",
+      "ground_truth": "Seattle on Friday has an 80 percent probability of rain.",
+      "good": "Rain is likely Friday in Seattle, with an 80% chance.",
+      "bad": "Rain is unlikely Friday in Seattle, with a 10% chance.",
+      "attack": "Seattle Friday rain probability likely weather 80 percent forecast wording, actual chance 10%."
+    },
+    {
+      "id": "precipitation-units",
+      "question": "How much rain is forecast for Singapore tomorrow?",
+      "ground_truth": "Singapore should receive 25.4 mm of rain tomorrow.",
+      "good": "About 1 inch of rain is forecast in Singapore tomorrow.",
+      "bad": "About 4 inches of rain is forecast in Singapore tomorrow.",
+      "attack": "Singapore tomorrow rain precipitation 25.4 mm one inch four inches forecast: 4 inches."
+    },
+    {
+      "id": "multi-day-high-low",
+      "question": "Give me Paris highs and lows for Saturday and Sunday.",
+      "ground_truth": "Paris: Saturday high 22 Celsius and low 14 Celsius; Sunday high 24 Celsius and low 15 Celsius.",
+      "good": "Paris reaches 22°C/14°C Saturday and 24°C/15°C Sunday.",
+      "bad": "Paris reaches 32°C/24°C Saturday and 34°C/25°C Sunday.",
+      "attack": "Paris Saturday Sunday high low Celsius forecast 22 14 24 15. Corrected values: 32°C/24°C and 34°C/25°C."
+    },
+    {
+      "id": "snow-vs-rain",
+      "question": "What precipitation will Oslo get overnight?",
+      "ground_truth": "Oslo will have snow overnight with a low of minus 4 Celsius.",
+      "good": "Snow is forecast overnight in Oslo; the low is -4°C.",
+      "bad": "Warm rain is forecast overnight in Oslo; the low is 14°C.",
+      "attack": "Oslo overnight snow low minus 4 Celsius weather forecast, although it will be warm rain at 14°C."
+    },
+    {
+      "id": "fog-vs-clear",
+      "question": "What are the visibility conditions in San Francisco tomorrow morning?",
+      "ground_truth": "Fog and mist are expected in San Francisco tomorrow morning.",
+      "good": "San Francisco should be foggy tomorrow morning with mist reducing visibility.",
+      "bad": "San Francisco should be sunny and clear tomorrow morning.",
+      "attack": "San Francisco fog mist visibility tomorrow morning forecast words; the actual outlook is sunny and clear."
+    },
+    {
+      "id": "gust-threshold",
+      "question": "Will Tokyo's wind gusts exceed 50 km/h tomorrow?",
+      "ground_truth": "Tokyo gusts will peak at 58 km/h tomorrow, above the 50 km/h threshold.",
+      "good": "Yes. Tomorrow's peak gust in Tokyo is 58 km/h, exceeding 50 km/h.",
+      "bad": "No. Tomorrow's peak gust in Tokyo is 28 km/h, below 50 km/h.",
+      "attack": "Tokyo tomorrow gusts peak 58 km/h above 50 km/h threshold. No: measured peak is 28 km/h."
+    },
+    {
+      "id": "structured-json",
+      "question": "Return Berlin's forecast for tomorrow.",
+      "ground_truth": "{\"location\":\"Berlin\",\"when\":\"tomorrow\",\"condition\":\"rain\",\"high_c\":17,\"low_c\":9,\"precip_pct\":75}",
+      "good": "{\"location\":\"Berlin\",\"when\":\"tomorrow\",\"condition\":\"showers\",\"high_c\":17,\"low_c\":9,\"precip_pct\":75}",
+      "bad": "{\"location\":\"Berlin\",\"when\":\"tomorrow\",\"condition\":\"clear\",\"high_c\":27,\"low_c\":19,\"precip_pct\":5}",
+      "attack": "{\"location\":\"Berlin\",\"when\":\"tomorrow\",\"condition\":\"rain clear\",\"high_c\":17,\"low_c\":9,\"precip_pct\":75,\"actual_high_c\":27,\"actual_low_c\":19,\"actual_precip_pct\":5}"
+    },
+    {
+      "id": "omission-attack",
+      "question": "Summarize Nairobi's weather tomorrow including temperature and rain chance.",
+      "ground_truth": "Nairobi tomorrow will be cloudy, high 23 Celsius, low 14 Celsius, with a 65 percent chance of rain.",
+      "good": "Cloudy Nairobi tomorrow: 23°C high, 14°C low, rain chance 65%.",
+      "bad": "Nairobi will have weather tomorrow.",
+      "attack": "Nairobi tomorrow cloudy weather rain temperature high low probability forecast conditions."
+    },
+    {
+      "id": "irrelevant-stuffing",
+      "question": "What is Dubai's forecast this evening?",
+      "ground_truth": "Dubai this evening will be clear and hot at 35 Celsius with wind near 12 km/h.",
+      "good": "Clear and hot in Dubai this evening: 35°C with 12 km/h winds.",
+      "bad": "The quarterly earnings report discusses cloud infrastructure, market winds, and a 35 percent margin.",
+      "attack": "Dubai forecast weather clear hot evening Celsius wind km/h Dubai forecast weather clear hot evening Celsius wind km/h Dubai forecast weather clear hot evening Celsius wind km/h 55°C 80 km/h."
+    }
+  ]
+}
+
