@@ -46,5 +46,5 @@ The first unchecked task is the only active task. Every checked task must have i
   - Gate: `WasmRegistered` event and registration ID captured.
 - [ ] P4.3 Verify Telegraph evaluation.
   - Gate: status, candidate/champion margins, wins, and historical agreement captured. Fix and re-register if rejected while time remains.
-- [ ] P4.4 Register recalibrated v0.2 after #1849 separation rejection.
+- [x] P4.4 Register recalibrated v0.2 after #1849 separation rejection.
   - Gate: new hash is evaluated above the observed `0.9905663` champion margin and the resulting ID is used for submission.

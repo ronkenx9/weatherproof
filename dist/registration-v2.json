@@ -1,5 +1,5 @@
 {
-  "status": "ready_to_register",
+  "status": "registered_pending_evaluation",
   "network": "Base Sepolia",
   "chain_id": 84532,
   "diamond": "0x5a2324aA18613FAD4e44bDF0d6c73Ec1f6D87ff8",
@@ -10,6 +10,11 @@
   "source_commit": "a61f43ab2084a5d173c463127637a5891ce63eb7",
   "repository_url": "https://github.com/ronkenx9/weatherproof",
   "artifact_url": "https://raw.githubusercontent.com/ronkenx9/weatherproof/a61f43ab2084a5d173c463127637a5891ce63eb7/dist/weatherproof.wasm",
+  "ipfs_url": "https://gateway.pinata.cloud/ipfs/QmaQHw6ZRnQiByDYiPRm5cqJQ7apbALiXT2TDFZRq6epDe",
+  "registration_id": 1860,
+  "registrant": "0xc721912d00c84003015f01c1051a639092603923",
+  "registration_tx": "0xe3135a877abf8cb9a720684bca6a62fa5dd067b93901ace59867268a9f45450c",
+  "registration_block": 46139370,
   "replaces_rejected_registration_id": 1849,
   "observed_hidden_champion_margin": 0.9905663,
   "local_candidate_average_margin": 0.9999999959711587,

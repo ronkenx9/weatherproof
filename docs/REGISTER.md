@@ -15,6 +15,13 @@ The scorer ordered every hidden pair correctly. It lost only because the final s
 
 ## v0.2 — ready to register
 
+v0.2 is now registered as **ID `1860`**. The transaction succeeded; Stage 2 is pending indexer/evaluator status.
+
+- Transaction: [`0xe313…450c`](https://sepolia.basescan.org/tx/0xe3135a877abf8cb9a720684bca6a62fa5dd067b93901ace59867268a9f45450c)
+- Telegraph IPFS URL: `https://gateway.pinata.cloud/ipfs/QmaQHw6ZRnQiByDYiPRm5cqJQ7apbALiXT2TDFZRq6epDe`
+
+Do not register it again. Watch the Dashboard for the Stage 2 result.
+
 ```text
 Hash:     0xb749d778a4e53906381c805a41388b0d2342306195816b2a7bb81400d50da2e7
 Intent:   WEATHER_FORECAST
