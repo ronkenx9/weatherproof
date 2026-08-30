@@ -1,0 +1,19 @@
+{
+  "status": "ready_to_register",
+  "network": "Base Sepolia",
+  "chain_id": 84532,
+  "diamond": "0x5a2324aA18613FAD4e44bDF0d6c73Ec1f6D87ff8",
+  "method": "registerWasm(bytes32,string,string)",
+  "intent": "WEATHER_FORECAST",
+  "keccak256": "0x94f75a8a12ee82845bf9ee003d5bda12508e7a9c7deb3c6ee13feebe6164ec63",
+  "byte_size": 17125,
+  "source_commit": "30e0403d683929efcfea5e03faa506bdde4c1dc2",
+  "repository_url": "https://github.com/ronkenx9/weatherproof",
+  "artifact_url": "https://raw.githubusercontent.com/ronkenx9/weatherproof/30e0403d683929efcfea5e03faa506bdde4c1dc2/dist/weatherproof.wasm",
+  "replaces_rejected_registration_id": 1860,
+  "observed_champion_margin": 0.9905664,
+  "local_candidate_average_margin": 0.9999999998251478,
+  "local_candidate_attack_margin": 0.9999974686834321,
+  "local_candidate_wins": 15,
+  "local_candidate_attack_wins": 15
+}

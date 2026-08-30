@@ -48,3 +48,5 @@ The first unchecked task is the only active task. Every checked task must have i
   - Gate: status, candidate/champion margins, wins, and historical agreement captured. Fix and re-register if rejected while time remains.
 - [x] P4.4 Register recalibrated v0.2 after #1849 separation rejection.
   - Gate: new hash is evaluated above the observed `0.9905663` champion margin and the resulting ID is used for submission.
+- [ ] P4.5 Register v0.3 ordering retry after #1860 rejection.
+  - Gate: new hash wins all 15 hidden ordering cases and beats the observed `0.9905664` separation.

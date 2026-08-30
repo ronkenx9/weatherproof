@@ -13,14 +13,21 @@
 
 The scorer ordered every hidden pair correctly. It lost only because the final scores were not polarized enough.
 
-## v0.2 — ready to register
+## v0.3 — ready to register
 
-v0.2 is now registered as **ID `1860`**. The transaction succeeded; Stage 2 is pending indexer/evaluator status.
+v0.2 is registered as **ID `1860`** but was rejected on one hidden ordering case (`14/15`). v0.3 is the next candidate.
 
 - Transaction: [`0xe313…450c`](https://sepolia.basescan.org/tx/0xe3135a877abf8cb9a720684bca6a62fa5dd067b93901ace59867268a9f45450c)
 - Telegraph IPFS URL: `https://gateway.pinata.cloud/ipfs/QmaQHw6ZRnQiByDYiPRm5cqJQ7apbALiXT2TDFZRq6epDe`
 
 Do not register it again. Watch the Dashboard for the Stage 2 result.
+
+```text
+Hash:     0x94f75a8a12ee82845bf9ee003d5bda12508e7a9c7deb3c6ee13feebe6164ec63
+Intent:   WEATHER_FORECAST
+URL:      https://raw.githubusercontent.com/ronkenx9/weatherproof/30e0403d683929efcfea5e03faa506bdde4c1dc2/dist/weatherproof.wasm
+Bytes:    17125
+```
 
 ```text
 Hash:     0xb749d778a4e53906381c805a41388b0d2342306195816b2a7bb81400d50da2e7

@@ -42,10 +42,10 @@ Run `./scripts/build.sh && node scripts/demo.mjs`. The terminal shows the correc
 ## Links
 
 - Repository: https://github.com/ronkenx9/weatherproof
-- Immutable WASM: https://raw.githubusercontent.com/ronkenx9/weatherproof/a61f43ab2084a5d173c463127637a5891ce63eb7/dist/weatherproof.wasm
-- Registration ID: `1860`
-- Registration transaction: https://sepolia.basescan.org/tx/0xe3135a877abf8cb9a720684bca6a62fa5dd067b93901ace59867268a9f45450c
+- Immutable WASM: https://raw.githubusercontent.com/ronkenx9/weatherproof/30e0403d683929efcfea5e03faa506bdde4c1dc2/dist/weatherproof.wasm
+- Registration ID: `NEW_V3_REGISTRATION_ID`
 - v0.1 evaluation evidence: registration `1849`, rejected despite 15/15 ordering because its `0.7687` margin was below `0.9906`.
+- v0.2 evaluation evidence: registration `1860`, rejected at 14/15 ordering; v0.3 addresses context weighting.
 - X post: `OWNER_X_POST`
 
 ## Owner-only final actions

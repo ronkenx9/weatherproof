@@ -61,9 +61,9 @@ The artifact exports:
 
 ## Registration
 
-Registration `#1849` proved 15/15 hidden-fixture ordering but was rejected on separation (`0.7687` versus `0.9906`). The new v0.2 binary preserves that ordering and applies stricter monotonic calibration; its exact next-registration values are in [`dist/registration-v2.json`](dist/registration-v2.json). Promotion is reported only after a new live evaluation.
+Registration `#1849` proved 15/15 hidden-fixture ordering but was rejected on separation (`0.7687` versus `0.9906`). Registration `#1860` improved separation but missed one hidden ordering case (`14/15`). The v0.3 binary adjusts context weighting while retaining strict calibration; its exact next-registration values are in [`dist/registration-v3.json`](dist/registration-v3.json). Promotion is reported only after a new live evaluation.
 
-The v0.2 artifact keccak is `0xb749d778a4e53906381c805a41388b0d2342306195816b2a7bb81400d50da2e7`. [`docs/REGISTER.md`](docs/REGISTER.md) contains the registration handoff and the evidence from rejected v0.1.
+The v0.3 artifact keccak is `0x94f75a8a12ee82845bf9ee003d5bda12508e7a9c7deb3c6ee13feebe6164ec63`. [`docs/REGISTER.md`](docs/REGISTER.md) contains the registration handoff and the evidence from rejected attempts.
 
 ## Evidence and limits
 
