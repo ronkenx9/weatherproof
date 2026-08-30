@@ -677,7 +677,7 @@ pub fn score_bytes(question: &[u8], ground_truth: &[u8], miner_answer: &[u8]) ->
     let length = length_quality(expected, answer);
 
     let correctness = if expected_number_count > 0 {
-        0.62 * numbers + 0.25 * conditions + 0.13 * time
+        0.58 * numbers + 0.24 * conditions + 0.18 * time
     } else if weather_bits(expected) != 0 {
         0.68 * conditions + 0.32 * time
     } else {
@@ -685,9 +685,9 @@ pub fn score_bytes(question: &[u8], ground_truth: &[u8], miner_answer: &[u8]) ->
     };
 
     let mut composite = if expected_number_count > 0 {
-        0.58 * numbers + 0.20 * conditions + 0.09 * time + 0.10 * lexical + 0.03 * relevance
+        0.52 * numbers + 0.18 * conditions + 0.09 * time + 0.16 * lexical + 0.05 * relevance
     } else if weather_bits(expected) != 0 {
-        0.55 * conditions + 0.12 * time + 0.28 * lexical + 0.05 * relevance
+        0.50 * conditions + 0.12 * time + 0.30 * lexical + 0.08 * relevance
     } else {
         0.72 * lexical + 0.16 * time + 0.12 * relevance
     };
