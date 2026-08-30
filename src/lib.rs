@@ -324,6 +324,45 @@ fn lexical_f1(expected: &[u8], answer: &[u8]) -> f32 {
     }
 }
 
+// A small, allocation-free surface fallback for paraphrases whose words do not
+// tokenize identically (for example, "temperature" and "temperatures"). It is
+// deliberately capped so adversarially long answers cannot consume unbounded
+// work inside Telegraph's WASM time budget.
+fn character_f1(expected: &[u8], answer: &[u8]) -> f32 {
+    let expected = &expected[..expected.len().min(256)];
+    let answer = &answer[..answer.len().min(256)];
+    if expected.len() < 3 || answer.len() < 3 {
+        return 0.0;
+    }
+    let expected_count = (expected.len() - 2) as f32;
+    let answer_count = (answer.len() - 2) as f32;
+    let mut expected_hits = 0usize;
+    for gram in expected.windows(3) {
+        if answer
+            .windows(3)
+            .any(|candidate| gram.eq_ignore_ascii_case(candidate))
+        {
+            expected_hits += 1;
+        }
+    }
+    let mut answer_hits = 0usize;
+    for gram in answer.windows(3) {
+        if expected
+            .windows(3)
+            .any(|candidate| gram.eq_ignore_ascii_case(candidate))
+        {
+            answer_hits += 1;
+        }
+    }
+    let precision = answer_hits as f32 / answer_count;
+    let recall = expected_hits as f32 / expected_count;
+    if precision + recall == 0.0 {
+        0.0
+    } else {
+        2.0 * precision * recall / (precision + recall)
+    }
+}
+
 fn starts_with_ci(text: &[u8], needle: &[u8]) -> bool {
     text.len() >= needle.len() && eq_ci(&text[..needle.len()], needle)
 }
@@ -664,11 +703,19 @@ pub fn score_bytes(question: &[u8], ground_truth: &[u8], miner_answer: &[u8]) ->
     }
 
     let lexical = lexical_f1(expected, answer);
+    let surface = character_f1(expected, answer);
     let relevance = if trim_ascii(question).is_empty() {
         0.5
     } else {
         lexical_f1(question, answer)
     };
+    let question_surface = if trim_ascii(question).is_empty() {
+        0.5
+    } else {
+        character_f1(question, answer)
+    };
+    let semantic = 0.75 * lexical + 0.25 * surface;
+    let semantic_relevance = 0.75 * relevance + 0.25 * question_surface;
     let (numbers, expected_number_count, answer_number_count, conflicting_extra_number) =
         numeric_score(expected, answer);
     let (conditions, condition_contradiction) =
@@ -685,9 +732,13 @@ pub fn score_bytes(question: &[u8], ground_truth: &[u8], miner_answer: &[u8]) ->
     };
 
     let mut composite = if expected_number_count > 0 {
-        0.52 * numbers + 0.18 * conditions + 0.09 * time + 0.16 * lexical + 0.05 * relevance
+        0.35 * numbers
+            + 0.15 * conditions
+            + 0.10 * time
+            + 0.30 * semantic
+            + 0.10 * semantic_relevance
     } else if weather_bits(expected) != 0 {
-        0.50 * conditions + 0.12 * time + 0.30 * lexical + 0.08 * relevance
+        0.40 * conditions + 0.10 * time + 0.40 * semantic + 0.10 * semantic_relevance
     } else {
         0.72 * lexical + 0.16 * time + 0.12 * relevance
     };

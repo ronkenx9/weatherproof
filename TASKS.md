@@ -50,3 +50,5 @@ The first unchecked task is the only active task. Every checked task must have i
   - Gate: new hash is evaluated above the observed `0.9905663` champion margin and the resulting ID is used for submission.
 - [ ] P4.5 Register v0.3 ordering retry after #1860 rejection.
   - Gate: new hash wins all 15 hidden ordering cases and beats the observed `0.9905664` separation.
+- [ ] P4.6 Register v0.4 semantic fallback retry after #1873 rejection.
+  - Gate: new hash wins all 15 hidden ordering cases; stop further retries if the same hidden case fails.
