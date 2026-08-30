@@ -13,9 +13,9 @@
 
 The scorer ordered every hidden pair correctly. It lost only because the final scores were not polarized enough.
 
-## v0.3 — ready to register
+## v0.4 — final bounded retry
 
-v0.2 is registered as **ID `1860`** but was rejected on one hidden ordering case (`14/15`). v0.3 is the next candidate.
+v0.2 (`1860`) and v0.3 (`1873`) were rejected on the same hidden ordering miss (`14/15`). v0.4 is the final bounded retry.
 
 - Transaction: [`0xe313…450c`](https://sepolia.basescan.org/tx/0xe3135a877abf8cb9a720684bca6a62fa5dd067b93901ace59867268a9f45450c)
 - Telegraph IPFS URL: `https://gateway.pinata.cloud/ipfs/QmaQHw6ZRnQiByDYiPRm5cqJQ7apbALiXT2TDFZRq6epDe`
@@ -23,10 +23,10 @@ v0.2 is registered as **ID `1860`** but was rejected on one hidden ordering case
 Do not register it again. Watch the Dashboard for the Stage 2 result.
 
 ```text
-Hash:     0x94f75a8a12ee82845bf9ee003d5bda12508e7a9c7deb3c6ee13feebe6164ec63
+Hash:     0x316aa104de22e9584e7cf586b1c2ce079a5cd083382efa16477e9c38bd6b91d0
 Intent:   WEATHER_FORECAST
-URL:      https://raw.githubusercontent.com/ronkenx9/weatherproof/30e0403d683929efcfea5e03faa506bdde4c1dc2/dist/weatherproof.wasm
-Bytes:    17125
+URL:      https://raw.githubusercontent.com/ronkenx9/weatherproof/278f27693a197ce758ae0194ceea0068d746f3e0/dist/weatherproof.wasm
+Bytes:    17712
 ```
 
 ```text
